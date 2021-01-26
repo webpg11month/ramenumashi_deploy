@@ -1,14 +1,14 @@
 @charset "UTF-8";
 /*
 date:2020/12/22
-edit:manshou 
+edit:manshou
 */
 
 /* 共通部分
------------------------- 
+------------------------
 ※初期値：10px
 */
-html {/*基準のフォントサイズ*/
+html {/*基準のフォントサイズ111*/
   font-size: 100%;/*fontを16px*/
   line-height:0;
 }
@@ -51,7 +51,7 @@ footer {
   flex-wrap: wrap;
   /* margin-left: 0px; */
   justify-content:space-around;
-  
+
 }
 .footer-nav-list-1 li {
   list-style: none;/*リストマーク削除*/
@@ -61,7 +61,7 @@ footer {
   flex-wrap: wrap;
   margin-left: 0px;
   justify-content:space-around;
-  
+
 }
 .footer-nav-list{
   margin-top: 10px;
