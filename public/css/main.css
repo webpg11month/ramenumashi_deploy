@@ -1,0 +1,1377 @@
+@charset "UTF-8";
+/*
+date:2020/12/22
+edit:manshou 
+*/
+/*==========================*/
+/* slide css */
+/*==========================*/
+.slider{
+    width: 50%;
+    height: 450px;
+    margin: 0 auto 120px;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+}
+ 
+.slider-content{
+    min-width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(100%);
+    overflow: hidden;
+}
+ 
+.slider-content:nth-child(1){
+    animation: sliderAnime 12s ease-in-out infinite;
+    z-index: 6;
+}
+ 
+.slider-content:nth-child(2){
+    animation: sliderAnime2 12s ease-in-out 2s infinite; /* 2秒後にスタート */
+    /* animation: sliderAnime2 6s ease-in-out 1s infinite; */
+    z-index: -1;
+}
+ 
+.slider-content:nth-child(3){
+    animation: sliderAnime2 12s ease-in-out 6s infinite;
+    /* animation: sliderAnime2 6s ease-in-out 3s infinite; */
+    z-index: -1;
+}
+ 
+@keyframes sliderAnime{
+    0%{
+        z-index: 5;
+        transform: translateX(0);
+    }
+    16.6%{
+        transform: translateX(0);
+    }
+    33.3%{
+        transform: translateX(-100%);
+    }
+    50%{
+        z-index: -1;
+        transform: translateX(-100%);
+    }
+    66.6%{
+        transform: translateX(100%);
+    }
+    83.2%{
+        z-index: 5;
+        transform: translateX(100%);
+    }
+    100%{
+        z-index: 5;
+        transform: translateX(0);
+    }
+}
+ 
+@keyframes sliderAnime2{
+    0%{
+        z-index: 5;
+        transform: translateX(100%);
+    }
+    16.6%{
+        transform: translateX(0);
+    }
+    33.3%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(-100%);
+    }
+    66.6%{
+        z-index: -1;
+        transform: translateX(-100%);
+    }
+    83.2%{
+        transform: translateX(100%);
+    }
+    100%{
+        z-index: 5;
+        transform: translateX(100%);
+    }
+}
+.slider-img{
+    max-width: 100%;
+    min-width: 100%;
+}
+
+@media screen and (max-width: 1300px) {
+   .slider{
+      height: 350px
+   }
+}
+
+@media screen and (max-width: 1000px) {
+   .slider{
+      width: 650px;
+      margin: 0;
+      margin: 0 auto 0 ;
+  }
+}
+@media screen and (max-width: 768px) {
+   .slider{
+      height: 450px;
+  }
+}
+@media screen and (max-width: 400px) {
+   .slider{
+      width: 350px;
+      height: 280px;
+  }
+}
+@media screen and (max-width: 450px) {
+   .slider{
+      width: 350px;
+      height: 280px;
+  }
+}
+/* 共通部分
+------------------------ 
+※初期値：10px
+*/
+html {/*基準のフォントサイズ*/
+  font-size: 100%;/*fontを16px*/
+  line-height:0;
+}
+
+a {/*リンクについて*/
+  text-decoration: none;/*リンク文字の下線をナシ*/
+}
+img {/*画像について*/
+    max-width: 100%;/*画像が親ボックスからはみ出さない*/
+}
+
+label.required:after {
+  margin-left: 1.0em;
+  padding: 0px 10px 0px 10px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: white;
+  background-color: #C44;
+  content: "必須";
+}
+
+label.required1:after {
+  margin-left: 0.1em;
+  padding: 0px 9px 0px 9px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: white;
+  background-color: #C44;
+  content: "必須";
+}
+
+label.optional:after {
+  margin-left: 1.0em;
+  padding: 0px 10px 0px 10px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: white;
+  background-color: #123;
+  content: "任意";
+}
+
+
+/* フェード効果 */
+/*  */
+.main-access-rank {
+  font-size: 20px;
+  font-weight: bold;
+  animation-name: fadein;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+}
+
+.fade-main {
+  font-size: 20px;
+  font-weight: bold;
+  animation-name: fadein;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+}
+
+.fade-main1 {
+  font-size: 20px;
+  font-weight: bold;
+  animation-name: fadein;
+  animation-duration: 6s;
+  animation-iteration-count: 1;
+}
+.fade-main2 {
+  font-size: 20px;
+  font-weight: bold;
+  animation-name: fadein;
+  animation-duration: 10s;
+  animation-iteration-count: 1;
+}
+@keyframes fadein {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* index画面
+---------------------------------*/
+iframe {
+  width: 100%;
+}
+
+.main-access {
+  text-align: center;
+  margin: 20px;
+}
+.main-rank-item {
+  text-align: center;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+}
+.main-access-rank {
+  display: grid;
+  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+}
+
+.main-rank-text{
+  word-wrap: break-word;
+}
+
+.hover-index:hover {
+  opacity:.6;
+  transition-duration:0.8s;
+  transition: all  0.5s ease; 
+}
+
+/*shop画面
+------------------------------*/
+.gnav {
+  display: flex;
+  height: 2rem;
+  margin: 0 auto;
+  width: 1000px;
+  margin-bottom: 5%;
+  font-size: 20px;
+}
+.gnav > li {/*親階層のみ幅を25%にする*/
+  width: 25%;
+  z-index: 10;
+}
+/*全てのリスト・リンク共通*/
+.gnav li {
+  list-style: none;
+}
+.gnav li a {
+  background: #001b34;
+  border-right: 1px solid #eee;
+  color: #fff;
+  display: block;
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
+/*子階層以降共通*/
+.gnav li li {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: opacity .5s;
+}
+.gnav li li a {
+  border-top: 1px solid #eee;
+}
+.gnav li:hover > ul > li {
+  height: 2rem;
+  opacity: 1;
+  overflow: visible;
+}
+.gnav li ul li ul {
+  left: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+/*一番右のメニュー*/
+.gnav > li:nth-child(5) ul li ul {
+  left: -100%;
+}
+/*hover*/  
+.gnav > li:hover > a {/*親階層*/
+  background: #00305c;
+}
+   
+.gnav > li li > a {/*子階層*/
+  background: #00305c;
+}
+.gnav > li li:hover > a {
+  background: #004789;
+}
+
+.gnav li ul li ul li > a {/*孫階層*/
+  background: #004789;
+}
+.gnav li ul li ul li:hover > a {
+  background: #0065c1;
+}
+
+.gnav li ul li ul li ul li > a {/*ひ孫階層*/
+  background: #0065c1;
+}
+.gnav li ul li ul li ul li:hover > a {
+  background: #1e7dd4;
+}
+
+.table-accsess-th {
+  width: 80px;
+}
+/*店舗情報・地図*/
+#location {
+  padding: 4% 0;
+}
+
+#location .wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.location-info {
+  margin: 0 1%;
+}
+
+.location-info p {
+  padding: 12px 10px;
+}
+.location-map {
+  width: 64%;
+  margin-bottom: 30px;
+}
+
+.shop-table-td {
+  width: 300px;
+}
+
+/*ページャー機能*/
+.pagination{
+  padding:2em;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content:center;
+  background:#f3f3f3;
+  list-style: none;
+}
+.page-item {
+  width:50px;
+  height:50px;
+  margin:2px;
+  line-height:50px;
+  text-align:center;
+  font-size:18px;
+  font-weight:bold;
+  text-decoration:none;
+  background:#fff;
+  color:#222;
+  transition:.3s;
+  
+}
+
+.page-link:hover {
+  border-radius:100%;
+  transform:rotate(360deg);
+}
+/* li.disabled {
+    background:none;
+} */
+span.page-link {
+  border-radius:100%;
+  transform:rotate(360deg);
+}
+
+
+.active{
+  background:gold;
+  border-radius:100%;
+}
+
+
+/*ログイン画面
+------------------------------*/
+
+.wrapper-login {
+  /*ページの最大幅と余白を指定*/
+  background: #ededed;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+#wrapper-main-login {
+  text-align: center;
+}
+.main-login-grid {
+  display: grid;
+  margin: 20px;
+  font-size: 20px;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+}
+.main-login-item{
+  width: 100%;
+  border-bottom: 2px solid gray;
+}
+
+.login-submit{
+  color: aliceblue;
+  text-align: center;
+  margin-left: 350px;
+  margin-bottom: 30px;
+  width: 100px;
+}
+
+/*Umashiについて
+---------------------------------*/
+  .main-umashi-center{
+    text-align: center;
+  }
+  .wrapper-umashi {
+    /*ページの最大幅と余白を指定*/
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 4%;
+  }
+  .umashi-special{
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-top: 200px;
+  }
+  #umashi-item{
+    width: 400px;
+    margin-top: 100px;
+    position: absolute;/*絶対配置*/
+    font-size: 26px;
+    font-weight: 800;
+    transform: rotate( 20deg );
+    color: rgba(0,222,222,0.7);
+  }
+  #umashi-item2 img{
+    width: 200px;
+    height: 300px;
+    transform: rotate( 50deg );
+  }
+  #umashi-item3{
+    width: 400px;
+    margin-top: 140px;
+    position: absolute;/*絶対配置*/
+    font-size: 26px;
+    font-weight: 800;
+    transform: rotate( 20deg );
+    color: rgba(0,222,222,0.7);
+  }
+  #umashi-item4 img{
+    width: 200px;
+    height: 300px;
+
+  }
+  #umashi-item5{
+    width: 400px;
+    margin-top: 140px;
+    position: absolute;/*絶対配置*/
+    font-size: 26px;
+    font-weight: 800;
+    transform: rotate( 20deg );
+    color: rgba(0,222,222,0.7);
+  }
+  #umashi-item6 img{
+    width: 200px;
+    height: 300px;
+  }
+  .umashi-text{
+    margin-left: 40px;
+    margin-top: 60px;
+    margin-bottom: 200px;
+  }
+  .umashi-flex {
+    margin-top: 0px;
+    margin-bottom: 100px;
+    display: flex;
+  }
+
+
+/*お店予約画面
+---------------------------------*/
+
+.main-reve-grid {
+  display: grid;
+  gap:40px;
+  margin: 50px;
+  margin-left: 40px;
+  font-size: 20px;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+}
+
+.wrapper-reve {
+  /*ページの最大幅と余白を指定*/
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 4%;
+  background-color:rgba(0,222,222,0.3);
+}
+
+#wrapper-main-reve {
+  margin-top: 30px;
+  text-align: center;
+}
+#main-reve-item{
+  margin-left: 80%;
+}
+#main-reve-item1 input{
+  border-radius: 0.5vw;
+  width: 5vw;
+}
+
+#main-reve-item2{
+  margin-left:80%;
+}
+
+#main-reve-item3 input{
+  margin: 0;
+  width: 13
+  vw;
+  margin-right: 10px;
+  border-radius: 0.5vw;
+}
+
+#main-reve-item4 select{
+  width: 10vw;
+  text-align: center;
+  border-radius: 0.5vw;
+}
+
+.reve-submit{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.reve-submit{
+  color: aliceblue;
+  text-align: center;
+  margin-left: 380px;
+  margin-bottom: 30px;
+  width: 100px;
+}
+
+#table-sheet {
+  font-family: inherit;
+  
+}
+
+/* キャンセルボタンと予約ボタン */
+.main-reserve {
+  display: flex;
+  gap: 50px;
+  color: #fafafa;
+}
+
+.rese-submit{
+  color: aliceblue;
+  text-align: center;
+
+}
+
+/*新規登録
+---------------------------------*/
+.wrapper-regi {
+  /*ページの最大幅と余白を指定*/
+   background: #ededed;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+#wrapper-main-regi {
+  text-align: center;
+}
+.main-regi-grid {
+  display: grid;
+  margin: 20px;
+  font-size: 20px;
+/*  margin-right: 200px;*/
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+}
+.main-regi-item{
+  width: 65%;
+  margin-left: 80px;
+  border-bottom: 2px solid gray;
+}
+
+.regi-submit{
+  color: aliceblue;
+  text-align: center;
+  margin-left: 350px;
+  margin-bottom: 30px;
+  width: 100px;
+}
+.button{
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 18pt;        /* 文字サイズ */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 12px 12px;   /* 余白       */
+  background    : #000066;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+  border        : 2px solid #000066;    /* 枠の指定 */
+}
+
+.button:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+  color         : #000066;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
+}
+.alert {
+  color:#FF5722;
+}
+
+.register-result {
+  display:inline-block;
+  margin:25vh 0 20vh 36vw;
+  font-size: 20px;
+}
+.register-result:hover {
+  opacity:.6;
+  transition-duration:0.8s;
+  transition: all  0.5s ease; 
+  background: chocolate;
+  border-radius: 10px;
+}
+
+/*マイページ
+---------------------------------*/
+.wrapper-mypage {
+  /*ページの最大幅と余白を指定*/
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+
+.mypage-login {
+  background-color: aqua;
+  text-align: center;
+  width: 300px;
+  margin-left: 980px;
+}
+
+.mypage-head{
+  text-align: center;
+}
+#menu {
+  background-image: url(../images/menu-bg.jpg);
+  min-height: 100vh;
+}
+
+.menu-content {
+  max-width: 560px;
+  margin-top: 10%;
+}
+
+.menu-content .page-title {
+  text-align: center;
+}
+
+.menu-content p {
+  font-size: 1.125rem;
+  margin: 10px 0 0;
+}
+
+.grid {
+  /*タイル型レイアウトの設定*/
+  display: grid;
+  /*親ボックスをグリッドコンテナとして設定*/
+  gap: 26px;
+  /*子要素同士の余白*/
+  /*  grid-template-columns: 1fr 1fr 1fr;  */
+  /*カラムより列の数を指定する（横幅を1:1:1で設定）*/
+  /*  grid-template-columns: repeat(3,1fr);*/
+  /*  grid-template-columns: repeat(3,minmax(240px,1fr));*/
+  /*３列表示を最小240から可変長（スマホ幅に近いと画像がはみだす）*/
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  /*ボックスがはみ出さないように自動調整（1列2列3列表示が可能）*/
+  margin-top: 6%;
+  /*親ボックス自体の上余白*/
+  margin-bottom: 50px;
+  /*親ボックス自体の下余白*/
+}
+
+/*ページャー機能*/
+.nav-links{
+  padding:2em;
+  display:flex;
+  justify-content:center;
+  background:#f3f3f3;
+}
+.nav-links a,span{
+  width:50px;
+  height:50px;
+  margin:2px;
+  line-height:50px;
+  text-align:center;
+  font-size:18px;
+  font-weight:bold;
+  text-decoration:none;
+  background:#fff;
+  color:#222;
+  transition:.3s;
+}
+.nav-links a:hover{
+  background:gold;
+  border-radius:100%;
+  transform:rotate(360deg);
+}
+.current{
+  background:gold;
+  border-radius:100%;
+}
+.dots{
+  background:none;
+}
+
+/*利用規約
+---------------------------------*/
+.wrapper-role {
+  /*ページの最大幅と余白を指定*/
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+
+/*プライバシー
+---------------------------------*/
+.wrapper-privacy {
+  /*ページの最大幅と余白を指定*/
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+
+/*プライバシー３
+---------------------------------*/
+.wrapper-privacy3 {
+  /*ページの最大幅と余白を指定*/
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+
+
+/*問い合わせ
+---------------------------------*/
+.wrapper-contact {
+  /*ページの最大幅と余白を指定*/
+  background: #ededed;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+#wrapper-main-contact {
+  text-align: center;
+}
+.main-contact-grid {
+  display: grid;
+  margin: 20px;
+  font-size: 20px;
+/*  margin-right: 200px;*/
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+}
+.main-contact-item{
+  width: 65%;
+  margin-left: 80px;
+  border-bottom: 2px solid gray;
+}
+
+.contact-submit{
+  color: aliceblue;
+  text-align: center;
+  margin-left: 350px;
+  margin-bottom: 30px;
+  width: 100px;
+}
+
+/*解約
+---------------------------------*/
+#wrapper-main-cancellation{
+  text-align: center;
+}
+.wrapper-cancellation {
+  /*ページの最大幅と余白を指定*/
+  background: #ededed;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+#wrapper-main-contact {
+  text-align: center;
+}
+.main-cancellation-grid {
+  display: grid;
+  margin: 20px;
+  font-size: 20px;
+/*  margin-right: 200px;*/
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+}
+.main-cancellation-item{
+  width: 100%;
+  margin-top: 20px;
+  border-bottom: 2px solid gray;
+}
+
+.cancellation-submit{
+  color: aliceblue;
+  margin-left: 400px;
+  margin-bottom: 30px;
+  width: 100px;
+}
+
+/*ヘルプ画面
+---------------------------------*/
+.help-center {
+  text-align: center;
+}
+
+.wrapper-help {
+  /*ページの最大幅と余白を指定*/
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 4%;
+  margin-bottom: 100px;
+}
+
+.help_qa *,
+.help_qa *:before,
+.help_qa *:after {
+  font-family: 'FontAwesome', sans-serif;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.help_qa {
+  margin: 0 auto;
+  background: #ffffff;
+}
+
+.help_qa input {
+  display: none;
+}
+
+/* カテゴリー */
+.help_qa #help_content1,
+.help_qa #help_content2,
+.help_qa #help_content3,
+.help_qa #help_content4 {
+  display: none;
+  padding: 20px 0 0;
+  border-top: 1px solid #dddddd;
+}
+
+.help_qa label.help_tabitem {
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding: 15px 25px;
+  text-align: center;
+  color: #bbbbbb;
+  border: 1px solid transparent;
+}
+
+.help_qa label.help_tabitem:before {
+  margin-right: 10px;
+}
+
+.help_qa label.help_tabitem[for*='1']:before {
+  content: '\f2bd';
+}
+
+.help_qa label.help_tabitem[for*='2']:before {
+  content: '\f15c';
+}
+
+.help_qa label.help_tabitem[for*='3']:before {
+  content: '\f0f4';
+}
+
+.help_qa label.help_tabitem[for*='4']:before {
+  content: '\f001';
+}
+
+.help_qa label.help_tabitem:hover {
+  cursor: pointer;
+  color: #888888;
+}
+
+.help_qa input:checked + label {
+  color: #555555;
+  border: 1px solid #dddddd;
+  border-bottom: 1px solid #ffffff;
+}
+
+/* --ブロックのバーの色 */
+.help_qa input:checked + label[for*='1'] {
+  border-top: 5px solid #00BCD4;
+}
+
+.help_qa input:checked + label[for*='2'] {
+  border-top: 5px solid #FF5722;
+}
+
+.help_qa input:checked + label[for*='3'] {
+  border-top: 5px solid #03A9F4;
+}
+
+.help_qa input:checked + label[for*='4'] {
+  border-top: 5px solid #E91E63;
+}
+
+/* QAブロック */
+.help_qa #help_conttab1:checked ~ #help_content1,
+.help_qa #help_conttab2:checked ~ #help_content2,
+.help_qa #help_conttab3:checked ~ #help_content3,
+.help_qa #help_conttab4:checked ~ #help_content4 {
+  display: block;
+}
+
+.help_qa .help_qain {
+  overflow-x: hidden;
+  margin: 0 auto;
+  color: #333333;
+}
+
+.help_qa .help_qain .help_actab {
+  padding: 20px 0;
+  border-bottom: 1px dotted #cccccc;
+}
+
+/* 質問 */
+.help_qa .help_qain label {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 10px 10px 0 48px;
+  cursor: pointer;
+}
+
+/* ＋アイコン */
+.help_qa .help_qain .help_plus {
+  font-size: 2em;
+  line-height: 100%;
+  position: absolute;
+  z-index: 5;
+  margin-top: 3px;
+  margin-left: 10px;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+/* 答え */
+.help_qa .help_qain .help_actab-content {
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  margin: 0 10px 0 48px;
+  padding: 14px 0;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+  opacity: 0;
+}
+
+/* 質問を開いた時の仕様 */
+.help_qa .help_qain .help_actab input[type=checkbox]:checked ~ .help_actab-content {
+  height: auto;
+  opacity: 1;
+}
+
+/* 質問をクリックした時の▼アイコンの動き */
+.help_qa .help_qain .help_actab input[type=checkbox]:checked ~ .help_plus {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/*ラーメン店主様ご利用の場合
+--------------------------------*/
+.ramen-shop {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper-ramenshop {
+  margin: 0 auto;
+  text-align: center;
+  width: 60vw;
+}
+
+.ramen-shop-text {
+  text-align: left;
+}
+
+.ramen-shop-button {
+  display       : inline-block;
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 18pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 12px 12px;   /* 余白       */
+  background    : #000066;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+  border        : 2px solid #000066;    /* 枠の指定 */
+}
+.ramen-shop-button:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+  color         : #000066;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
+}
+
+/* お店新規登録
+--------------------------------- */
+.wrapper-ramenshop {
+  /*ページの最大幅と余白を指定*/
+  background: #ededed;
+  width: 80vw;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+
+.shopregi-grid {
+  display: grid;
+  margin: 20px;
+  font-size: 20px;
+/*  margin-right: 200px;*/
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+}
+.shopregi-item{
+  width: 65%;
+  margin-left: 2vw;
+  text-align: center;
+  font-size: 16px;
+  border-bottom: 2px solid gray;
+}
+
+.shopregi-item-1 {
+  margin-left: 13vw;
+  width:60%;
+  font-size: 16px;
+  text-align: left;
+  border-bottom: 2px solid gray;
+}
+
+.shopregi-submit{
+  color: aliceblue;
+  margin: 0 auto;
+}
+.button{
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 18pt;        /* 文字サイズ */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 12px 12px;   /* 余白       */
+  background    : #000066;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+  border        : 2px solid #000066;    /* 枠の指定 */
+}
+
+.button:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+  color         : #000066;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
+}
+
+.shopregi-result {
+  display:inline-block;
+  margin:25vh 0 20vh 36vw;
+  font-size: 20px;
+}
+.shopregi-result:hover {
+  opacity:.6;
+  transition-duration:0.8s;
+  transition: all  0.5s ease; 
+  background: chocolate;
+  border-radius: 10px;
+}
+
+/*レスポンシブ対応
+---------------------------------*/
+@media (max-width: 1024px) {
+  /*共通*/
+  .main-access {
+    font-size: 16px;
+  }
+  /*お店画面
+  ---------------------------------*/
+  .gnav {
+      display: none;
+  }
+  iframe{
+    width: 550px;
+    height: 200px;
+  }
+  /* 店舗情報・地図 */
+  #location .wrapper{
+    flex-direction: column;
+  }
+  .location-info,.location-map{
+    width: 100%;
+  }
+  .shop-table-td {
+    width:250px;
+  }
+  #shop-table-1 {
+    margin: 0 auto;
+  }
+  .location-map{
+    margin-top: 40px;
+    text-align: center;
+  }
+  #shop-table{
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  #shop-table-1 {
+    margin-bottom: 50px;
+  }
+
+
+  /* ログイン 
+  ---------------------------------*/
+  .main-login-grid{
+    text-align: center;
+    font-size: 16px;
+    gap: 0;
+    margin: 5px 10px 0px 20px;
+    margin-top: 5px;
+  }
+  .main-login-item{
+    width: 100%;
+    border-bottom: 0px;
+  }
+  .login-submit{
+    margin: 0;
+    margin-top: 20px;
+    margin-left: 25vw;
+  }
+  
+  /* 新規登録 
+  ---------------------------------*/
+  .main-regi-grid{
+    text-align: center;
+    font-size: 16px;
+    gap: 0;
+    margin: 5px 40px 0px 0px;
+    margin-top: 5px;
+  }
+  .main-regi-item{
+    width: 80%;
+    margin-left: 50px;
+    border-bottom: 0px;
+  }
+  #main-regi-sex {
+    width: 250px;
+    margin-left: 22px;
+  }
+  .regi-submit{
+    margin: 0;
+    margin-top: 20px;
+    margin-left: 23vw;
+  }
+
+  /* 問い合わせ 
+  ---------------------------------*/
+  .main-contact-grid{
+    text-align: center;
+    font-size: 16px;
+    gap: 0;
+    margin: 5px 40px 0px 20px;
+    margin-top: 5px;
+  }
+  .main-contact-item{
+    width: 100%;
+    margin-left: 20px;
+    border-bottom: 0px;
+  }
+  .contact-submit{
+    margin: 0;
+    margin-top: 20px;
+    margin-left: 30vw;
+  }
+  
+  /* 解約 
+  ---------------------------------*/
+  .main-cancellation-grid{
+    text-align: center;
+    font-size: 16px;
+    gap: 0;
+    margin: 5px 10px 0px 20px;
+    margin-top: 5px;
+  }
+  .main-cancellation-item{
+    width: 100%;
+    border-bottom: 0px;
+  }
+  .cancellation-submit{
+    margin: 0;
+    margin-top: 20px;
+    margin-left: 30vw;
+  }
+
+  /*マイページ
+  ---------------------------------*/
+  .mypage-login {
+    background-color: aqua;
+    text-align: center;
+    margin-left: 0;
+  }
+  .main-mypage-grid {
+    text-align: center;
+    font-size: 16px;
+    gap: 0;
+    margin: 5px 10px 0 15px;
+    margin-top: 5px;
+  }
+  /* 予約 
+  ---------------------------------*/
+  #main-reve-item{
+    margin-left: 50%;
+  }
+  #main-reve-item2{
+    margin-left: 50%;
+  }
+  .main-reve-grid {
+    display: grid;
+    gap:10px;
+    margin: 5%;
+    margin-left: 0;
+    font-size: 16px;
+    grid-template-columns:repeat(auto-fit,minmax(6%,1fr));
+  }
+  .reve-submit {
+    margin-left: 100px;
+  }
+  .main-reserve {
+    max-width:600px;
+    margin: 0 auto;
+    gap:0;
+    display: flex;
+    color: #fafafa;
+    justify-content: space-between;
+  }
+
+  #shop-info {
+    text-align: center;
+  }
+  
+
+  /*umashiについて
+  ---------------------------------*/
+  .umashi-flex {
+    flex-wrap: wrap;
+
+  }
+  .umashi-special{
+    margin-top: 50px;
+  }
+
+  /* ヘルプ
+  ---------------------------------*/
+  .help_qa label.help_tabitem {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  .help_qa label.help_tabitem:before {
+    margin-right: 0px;
+  }
+  
+  
+  help_qa label.help_tabitem {
+    font-size: 0;
+  }
+
+  label:before {
+    font-size: 16px;
+  }
+  /* お店新規登録
+  --------------------------------- */
+  .wrapper-ramenshop {
+    /*ページの最大幅と余白を指定*/
+    position: relative;
+    background: #ededed;
+    width: 90vw;
+    margin: 0 auto;
+    padding: 0 4vw;
+  }
+
+  .shopregi-grid {
+    display: grid;
+    margin: 10vw;
+    font-size: 20px;
+  /*  margin-right: 200px;*/
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  }
+  .shopregi-item{
+    width: 80%;
+    margin-left: 8vw;
+    border-bottom: 2px solid gray;
+  }
+  .shopregi-item-1{
+    width: 80%;
+    margin-left: 8vw;
+    border-bottom: 2px solid gray;
+    
+  }
+  .shopregi-submit{
+    color: aliceblue;
+    margin: 0 auto;
+  }
+  .button{
+    border-radius : 5%;          /* 角丸       */
+    font-size     : 18pt;        /* 文字サイズ */
+    cursor        : pointer;     /* カーソル   */
+    padding       : 12px 12px;   /* 余白       */
+    background    : #000066;     /* 背景色     */
+    color         : #ffffff;     /* 文字色     */
+    line-height   : 1em;         /* 1行の高さ  */
+    transition    : .3s;         /* なめらか変化 */
+    box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+    border        : 2px solid #000066;    /* 枠の指定 */
+  }
+
+  .button:hover {
+    box-shadow    : none;        /* カーソル時の影消去 */
+    color         : #000066;     /* 背景色     */
+    background    : #ffffff;     /* 文字色     */
+  }
+
+  .shopregi-result {
+    display:inline-block;
+    margin:25vh 0 20vh 36vw;
+    font-size: 20px;
+  }
+  .shopregi-result:hover {
+    opacity:.6;
+    transition-duration:0.8s;
+    transition: all  0.5s ease; 
+    background: chocolate;
+    border-radius: 10px;
+  }
+  .shopregi-item input {
+    font-size: 10px;
+  }
+}

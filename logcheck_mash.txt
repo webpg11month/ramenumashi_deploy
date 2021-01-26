@@ -1,0 +1,64 @@
+php artisan make:migration create_okini_tb_table
+
+php artisan migrate
+
+php artisan make:controller Shop/ShopController
+
+php artisan make:model Table/UserLogic
+
+php artisan make:request UserLoginRequest
+
+use Illuminate\Support\Facades\Log;
+Log::info('test');
+
+php artisan  make:middleware ShopLoginCheckMiddleware;
+
+リンク追加コマンド
+php artisan storage:link
+
+※カラム名変更
+ALTER TABLE shop_tb CHANGE COLUMN shop_pass password varchar(255) NOT NULL;
+
+select img from shop_tb where show_data = (select show_data from shop_tb order by show_data desc limit 0,1);
+自動化テスト
+php artisan make:test UserTest
+
+ダミーデータ作成
+php artisan make:seeder ReserveTableSeeder
+
+準備
+composer dump-autoload
+実行
+php artisan db:seed
+
+データ作成
+select id from ramenumashi.shop_tb order by show_data desc, id desc limit 1 offset 0;
+
+データ
+alter table shop_tb modify seat varchar(20) not null;
+
+gitコマンド
+echo "# testaaaa" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/webpg11month/testaaaa.git
+git push -u origin main
+
+
+git bash.exeにて実行する
+vagrant up
+vagrant up --provision
+※これで実行した方がよい
+vagrant.exe ssh
+cd code
+sqlcomd : mysql -uhomestead -psecret homestead
+
+mash.laravel 
+
+composer create-project --prefer-dist laravel/laravel Online "6.*"
+--ステータス確認--
+vagrant status
+--停止--
+vagrant halt

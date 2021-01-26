@@ -1,0 +1,571 @@
+@charset "UTF-8";
+/*
+date:2020/12/22
+edit:manshou 
+*/
+
+/* 共通部分
+------------------------ 
+※初期値：10px
+*/
+html {
+  /*基準のフォントサイズ*/
+  font-size: 100%;
+}  
+
+/* 余計な余白削除 */
+.wrapper-header {
+  overflow: hidden;
+}
+
+.wrapper {
+  /* 最大値を1200px */
+  max-width: 1200px;
+  /* 全体を真ん中に寄せる */
+  margin: 0 auto;
+}
+
+/*　IMGの設定
+---------------------------*/
+.big-bg {
+  /* 画像をカバーする（余白が出来てしまう） */
+  background-size: cover;
+}
+/* 画像イメージを設定する */
+#ramen-home {
+  /* 画像読込 */
+  background-image: url(../img/main/ramen.jpg);
+  /* 画像の固定 */
+  background-attachment: fixed;
+  /* 画像領域の大きさ */
+  min-height: 50vh;
+}
+  /* 横並びにする ロゴと文字とフォントを子要素で横並びにする */
+.page-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+/*--------------------------
+ロゴの設定
+・ロゴとフォントを横並びにする
+*/
+.logo-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 80px;
+}
+/* ロゴ画像の大きさ設定 */
+#ramen-logo {
+  margin-top: 20px;
+  width: 100px;
+  height: 100px;
+}
+/* ロゴの設定：カーソル */
+#ramen-logo:hover{
+  opacity:.6;
+  transition-duration:0.8s;
+  transition: all  0.5s ease; 
+}
+/* 文字の設定 */
+#logo-font {
+  text-align: center;
+  /*logoフレックス指定*/
+  color: #fafafa;
+  /* 文字のサイズ変更 */
+  font-size: 3.00rem;
+  /* 文字の枠線 */
+  -webkit-text-stroke:1px #000000;
+  /* RameinUmashiとLOGINの空間調整 */
+  width: 300px;
+  /* 上の調整 */
+  margin-top: 14px;
+}
+/* フォントリンクの設定：カーソル */
+#logo-font:hover{
+  background-color: azure;
+  color: #432;
+  margin-top: 20px;
+  width: 300px;
+  height: 80px;
+  border-radius: 40px;
+  /* ホバー時に動きを加える：基準値は真ん中から動く */
+  transition: all  0.5s ease; 
+}
+
+
+/*--------------------------
+LOGINとREGISTERとRAMENUMASHIについての設定
+*/
+.main-nav {
+  display: flex;
+  /* 文字サイズ変更 */
+  font-size: 1.25rem;
+  /* 大文字に変換する */
+  text-transform: uppercase;
+  /* マージントップを34px */
+  margin-top: 40px;
+  /* リストを削除 */
+  list-style: none;
+  /* レスポンシブ対応で下に段落を落とす */
+  flex-wrap: wrap;
+}
+.main-nav li {
+  /* li要素を右に寄らせる */
+  margin-left: 30px;
+}
+.main-nav a {
+  /* リンクの初期値の色指定 */
+  color: #432;
+}
+.main-nav a:hover {/*ホバー時の処理*/
+  background-color: azure;
+  color: #432;
+  padding: 10px;
+  border-radius: 50px;
+  transition: all  0.5s ease; 
+}
+
+.header-link1-1 {
+  background-color: #fafafa;
+  padding: 10px;
+  opacity: 0.8;
+  border-radius: 15px;
+}
+/*--------------------------
+検索窓の設定
+*/
+.home-content-1{
+  display: none;
+}
+.ramen-search-nav {
+  /*検索窓のフレックス指定*/
+  text-align: center;
+  display: flex;
+  /*flex設定（横並び）*/
+  height: 100px;
+  /*下に余白を入れる（検索窓込みの高さ指定）*/
+  padding-top: 20px;
+  /*上に余白を入れる*/
+  background-color: black;
+  /*背景色設定*/
+  margin-bottom: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  /*真ん中に設定*/
+}
+
+.ramen-search-size {
+  margin: 0;
+  /*検索の設定*/
+  height: 60px;
+  /*高さ60px*/
+  width: 200px;
+  /*幅200px*/
+}
+
+.ramen-search-size-date {
+  margin: 0;
+  /*日付の設定*/
+  height: 57px;
+  margin-top: 1.9px;
+  /*高さ60px*/
+  width: 190px;
+  /*幅190px*/
+  background-color: white;
+}
+
+#ramen-search-submit {
+  margin: 0;
+  /*検索ボタンの設定*/
+  height: 60px;
+  /*ボタンサイズ高さ60px設定*/
+  width: 120px;
+  /*ボタンサイズ幅120px設定*/
+  font-size: 20px;
+  /*文字サイズ20px設定*/
+}
+
+input[type="search"i] {
+  /*検索それぞれの文字サイズ*/
+  font-size: 20px;
+  /*文字サイズを20pxに設定*/
+}
+
+input[type="date"i] {
+  /*日付の文字サイズ調整*/
+  font-size: 16px;
+  /*文字サイズを16pxに設定*/
+}
+
+#anxiy-search-submit:hover {
+  /*カーソルを乗せた場合*/
+  color: gray;
+  /*黒に変化*/
+}
+
+/*--------------------------------
+スクロール
+*/
+/*--------------------------
+文字スクロールの設定
+*/
+.header-scroll {
+  /*スクロール背景設定*/
+  color: #666666;
+  /*fontの色変更*/
+  background-color: pink;
+  /*背景色を変更*/
+  font-size: 20px;
+}
+
+.header-news {
+  /*スクロール文字の設定*/
+  display: inline-block;
+  /*横並びに変更する*/
+  padding-left: 100%;
+  /*早さ調整*/
+  white-space: nowrap;
+  /*ボックスサイズが指定されている場合にも自動改行しない(スペース領域)*/
+  line-height: 1em;
+  /*topとbottomの幅調整*/
+  animation: scrollAnime 18s linear infinite;
+  /*スクロールアニメの設定*/
+}
+
+.header-news div {
+  /*スクロール文字列の設定*/
+  display: inline-block;
+  /*横ならびに設定する*/
+}
+
+@keyframes scrollAnime {
+
+  /*アニメーションの設定*/
+  0% {
+    transform: translateX(0)
+  }
+
+  /*開始位置*/
+  100% {
+    transform: translateX(-100%)
+  }
+
+  /*早さ指定*/
+}
+input {
+  margin: 10px;
+}
+
+/* ハンバーガーの通常ウィンドウの非表示（レスポンシブのみ表示） */
+.hamburger-none {
+  display: none;
+}
+@media screen and (max-width:425px){
+
+  .big-bg {
+    height: 300px;
+    /* 画像をカバーする（余白が出来てしまう） */
+  }
+  #logo-font {
+    
+    position: relative;
+    /*logoフレックス指定*/
+    color: #fafafa;
+    margin-top: 50px;
+    margin-right: 80px;
+    margin-left: 40px;
+    /* 文字のサイズ変更 */
+    font-size: 2.75rem;
+    /* 文字の枠線 */
+    -webkit-text-stroke:1px #000000;
+    /* 文字の幅サイズ */
+    width: 250px;
+  
+  }
+}
+
+@media screen and (min-width:325px){
+
+  .big-bg {
+    height: 300px;
+    /* 画像をカバーする（余白が出来てしまう） */
+  }
+  #logo-font {
+    
+    position: relative;
+    /*logoフレックス指定*/
+    color: #fafafa;
+    margin-top: 0;
+    margin-right: 80px;
+    margin-left: 40px;
+
+    /* 文字のサイズ変更 */
+    font-size: 2.75rem;
+    /* 文字の枠線 */
+    -webkit-text-stroke:1px #000000;
+    /* 文字の幅サイズ */
+    width: 250px;
+  
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  /* 画像イメージを設定する */
+  #ramen-home {
+    /* 画像読込 */
+    background-image: url(../img/main/ramen-response.jpg);
+    /* 画像の固定 */
+    background-attachment: unset;
+    /* 画像領域の大きさ */
+    min-height:0;
+
+  }
+  .big-bg {
+    /* 画像をカバーする（余白が出来てしまう） */
+    background-size: cover;
+  }
+
+  
+  /* ロゴ設定
+  ------------------------------*/
+  .logo-flex {
+    /* レスポンシブの上の幅調整 */
+    gap:20px;
+  }
+  .logo-flex-ramen{
+    width: 100px;
+  }
+  #logo-font {
+    position: relative;
+    /*logoフレックス指定*/
+    color: #fafafa;
+    /* 文字のサイズ変更 */
+    font-size: 2.75rem;
+    /* 文字の枠線 */
+    -webkit-text-stroke:1px #000000;
+  
+  }
+  /* 検索窓スマホ用
+  ----------------------------- */
+  .home-content-1{
+    display: inline;
+  }
+  table.search-table-response{
+    margin: 0 auto;
+  }
+
+  .submit-color{
+    color: orange;
+  }
+
+  .submit-table-response {
+    width: 100px;
+    height: 50px;
+    font-weight: bold;
+    margin-left: 30%;
+    background:#432;
+    border-radius: 10px;
+  }
+
+  
+  .date-search-response {
+    width: 235px;
+    height: 40px;
+  }
+  /*------------------------------
+  ハンバーガー実装
+  ------------------------------*/
+
+  /* チェックボックスは非表示に */
+  .chekc-hidden {
+    /*チェックボックス削除*/
+    display: none;
+  }
+
+  .hamburger-none {
+    display: contents;
+  }
+
+  .header-nav-list {
+    display: none;
+  }
+
+  .home-content {
+    display: none;
+  }
+
+  .hamburger-open {
+    /*ハンバーガーアイコンの設置スペース ハンバーガーアイコンのフレックス指定 fixedで固定*/
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    /*flex設定（横並び）*/
+    justify-content: center;
+    /*真ん中に設定する（中）*/
+    align-items: center;
+    /*真ん中に設定する（外）*/
+    cursor: pointer;
+    /*カーソル認識*/
+  }
+
+  .hamburger-open span,
+  .hamburger-open span:before,
+  .hamburger-open span:after {
+    /* ハンバーガーメニューのアイコンの設定 */
+    content: '';
+    /*空白領域作成*/
+    display: block;
+    /*縦並びにする*/
+    height: 3px;
+    /*高さ幅3pxに設定*/
+    width: 25px;
+    /*横幅3pxに設定*/
+    border-radius: 3px;
+    /*丸みを3pxにする*/
+    background: black;
+    /*#333に色指定*/
+    transition: 0.5s;
+    /*0.5s書けて×になる*/
+    position: absolute;
+    /*絶対配置(くっついてしまう)*/
+  }
+
+  .hamburger-open span:before {
+    /* 三本線のうち一番上の棒の位置調整 */
+    bottom: 8px;
+    /*下の幅を8px*/
+  }
+
+  .hamburger-open span:after {
+    /* 三本.hamburger-open span:after {/* 三本線のうち一番下の棒の位置調整 */
+    top: 8px;
+    /*上の幅を8px*/
+  }
+
+  #hamburger-check:checked ~ .hamburger-open span {
+    /* アイコンがクリックされたら真ん中の線を透明にする */
+    background: rgba(255, 255, 255, 0);
+    /*真ん中の線を消す*/
+  }
+
+  /* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+  #hamburger-check:checked ~ .hamburger-open span::before {
+    bottom: 0;
+    /*下の領域を0pxにする*/
+    transform: rotate(45deg);
+    /*45°下に下げる*/
+  }
+
+  #hamburger-check:checked ~ .hamburger-open span::after {
+    top: 0;
+    /*下の領域を0pxにする*/
+    transform: rotate(-45deg);
+    /*45°上に上げる*/
+  }
+
+  /* メニューのデザイン*/
+  .hamburger-item {
+    /*メニューリストの設定*/
+    list-style: none;
+    /*リストマーク削除*/
+  }
+
+  .hamburger-close {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 255, 0.1);
+    position: fixed;
+    top: 0;
+    left: 100%;
+    /* 閉じる要素を画面外へ */
+    z-index: 1;
+    /* 重なり順をメニューより下に*/
+    transition: .5s;
+  }
+
+  #hamburger-check:checked ~ .hamburger-close {
+    left: 0;
+    /* 閉じる要素を画面内へ */
+
+  }
+
+  .hamburger-content {
+    flex: display;
+    width: 50%;
+    /*横を10%に設定する*/
+    height: 100%;
+    /*高さを100%にする*/
+    position: fixed;
+    /*固定する*/
+    top: 0;
+    /*上の領域を0にする*/
+    left: 100%;
+    /* メニューを画面の外に飛ばす */
+    background: #fff;
+    /*背景色白にする*/
+    transition: .5s;
+    /*5秒かけて左に寄る*/
+    flex-wrap: wrap;
+    z-index: 10;
+  }
+
+  #hamburger-check:checked ~ .hamburger-content {
+    /* アイコンがクリックされたらメニューを表示 */
+    left: 0;
+    /* メニューを画面に入れる */
+  }
+  .hamburger-main-contents {
+    overflow: scroll;
+    width: 100%;
+    height: 100%;
+    background-color: #fafafa;
+    padding: 100px 0;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  #hamburger-header-contents {
+    width: 100%;
+    background-color: #101010;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+    position: absolute;
+    /*←絶対位置*/
+    top: 0;
+    /*上に固定*/
+  }
+
+  .hamburger-content li.hamburger-item {
+    background-color: #fafafa;
+    color: #000000;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .hamburger-item a:hover {
+    background-color: black;
+    color: #fafafa;
+    border-radius: 4px;
+  }
+
+  #hamburger-footer-contents {
+    width: 100%;
+    background-color: #101010;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+    position: absolute;
+    /*←絶対位置*/
+    bottom: 0;
+    /*下に固定*/
+
+  }
+
+
+}

@@ -1,0 +1,157 @@
+@charset "UTF-8";
+/*
+date:2020/12/22
+edit:manshou 
+*/
+
+/* 共通部分
+------------------------ 
+※初期値：10px
+*/
+html {/*基準のフォントサイズ*/
+  font-size: 100%;/*fontを16px*/
+  line-height:0;
+}
+body {/* フォントについて */
+  font-family: "Yu Gothic Medium",
+              "遊ゴシック Medium",
+              YuGothic,
+              "遊ゴシック体",
+              "ヒラギノ角ゴ Pro W3" ,
+              sans-serif;
+              line-height: 1.7;
+              color: #222;/*フォントの設定*/
+}
+
+/*--------------------------
+フッターリンクの設定
+*/
+.footer-cp {
+  margin: 0 auto;
+  text-align: center;
+}
+footer {
+  background: gray;
+  height: 250px;
+}
+/* メイン */
+.footer-umashi {
+  width: 60vw;
+  /* 文字を真ん中 */
+  text-align: center;
+  /* 要素を真ん中 */
+  margin: 0 auto;
+  border-bottom: 1px solid #fafafa;
+}
+.footer-nav-list li {
+  list-style: none;/*リストマーク削除*/
+}
+.footer-nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  /* margin-left: 0px; */
+  justify-content:space-around;
+  
+}
+.footer-nav-list-1 li {
+  list-style: none;/*リストマーク削除*/
+}
+.footer-nav-list-1 {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 0px;
+  justify-content:space-around;
+  
+}
+.footer-nav-list{
+  margin-top: 10px;
+}
+.footer-nav-list-1{
+  margin-top: 10px;
+}
+.footer-nav {
+  display: flex;
+  font-size: 10px;
+  text-transform: uppercase;
+  /* margin-top: 34px; */
+  list-style: none;
+  flex-wrap: wrap;
+}
+.footer-nav li {
+  margin-left: 26px;
+}
+
+.footer-nav a {
+  color:#432;
+}
+
+.footer-nav a:hover {
+  color:#0bd;
+}
+
+.footer-nav-1 {
+  display: flex;
+  font-size: 10px;
+  text-transform: uppercase;
+  margin-top: 34px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+.footer-nav-1 li {
+  margin-left: 26px;
+}
+
+.footer-nav-1 a {
+  color:#432;
+}
+
+.footer-nav-1 a:hover {
+  color:#0bd;
+}
+
+.footer-umashi-1 {
+  height: 30px;
+  font-weight: 300;
+  text-align: center;
+}
+
+/*トップへ戻る
+---------------------------*/
+#page_top{
+  width: 30px;
+  height: 30px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  background: #3fefee;
+  opacity: 0.6;
+}
+#page_top a{
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 30px;
+  text-decoration: none;
+}
+#page_top a::before{
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f062';
+  font-size: 25px;
+  color: #fff;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .footer-umashi{
+    font-size:20px;
+  }
+}
