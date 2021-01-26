@@ -1,3 +1,18 @@
 {
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 8888,
+            "driver": "MySQL",
+            "database": "ramenumashi",
+            "username": "root",
+            "name": "ramenumashi",
+            "password": "root"
+        }
+    ]
 }
